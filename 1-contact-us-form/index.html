@@ -4,12 +4,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
+    <!-- <style>
       /* write CSS here */
-    </style>
+    </style> -->
+
+    <link rel="stylesheet" href="style.css">
   </head>
-  <body></body>
-  <script>
-    // write javascript here
-  </script>
+  <body>
+
+    <div class="container">
+      <div class="heading">
+        <h1>Contact sales</h1>
+        <p>Aorem ipsum dolor sit amet consectetur adipisicing elit. wre</p>
+      </div>
+      <div class="input-container">
+        <!-- Name -->
+        <div class="input name">
+          <div class="first">
+            <label for="first name">First name</label>
+            <input type="text">
+          </div>
+          <div class="last">
+            <label for="last name">Last name</label>
+            <input type="text">
+          </div>
+        </div>
+        <div class="input">
+          <label for="company">Company</label>
+          <input type="text">
+        </div>
+        <div class="input">
+          <label for="email">Email</label>
+          <input type="text">
+        </div>
+        <div class="input">
+          <label for="phone">Phone number</label>
+          <select name="cars" id="cars" class="options">
+            <option value="US" class="option" selected>US</option>
+            <option value="INDIA" class="option">IN</option>
+            <option value="UNITED-KINGDOM" class="option">UK</option>
+          </select>
+          <input type="number" class="number num-check" placeholder="">
+        </div>
+        <div class="input">
+          <label for="message">Message</label>
+          <textarea name="message" id="" cols="50"></textarea>
+        </div>
+        <div class="checkbox">
+            <label class="switchBox" id="toggleSwitch">
+              <input type="checkbox" name="switch" id="switch" hidden>
+              <span class="circle">&nbsp;</span>
+            </label>
+          <p>By selecting this, you agree to our <a href="#">privacy policy</a></p>
+        </div>
+        <div class="input">
+          <button>Let's talk</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+  </body>
 </html>

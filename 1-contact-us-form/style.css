@@ -1,0 +1,288 @@
+/* write your css here */
+/*
+    SPACING SYSTEM (px)
+    2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+    FONT SIZE SYSTEM (px)
+    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+/* 
+    MAIN COLOR: #087f5b
+    GREY COLOR: #343a40
+*/
+
+/* @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap'); */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Sans", sans-serif;
+}
+
+body {
+  background: radial-gradient(
+    farthest-corner at 50px 200px,
+    rgba(184, 89, 184, 0.23) 0%,
+    rgb(255, 255, 255) 15%
+  );
+  background-repeat: no-repeat;
+}
+
+.container {
+  height: 100vh;
+  max-width: 80rem;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  /* justify-content: space-evenly; */
+  flex-direction: column;
+  gap: 35px;
+}
+
+.heading {
+  /* border: 2px solid blue; */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  height: 20vh;
+  /* min-width: 70rem; */
+  margin: 1rem 2rem;
+}
+
+.heading h1 {
+  font-size: 42px;
+  line-height: 0.8;
+}
+
+.heading p {
+  color: rgb(102, 102, 102);
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+}
+
+.input-container {
+  height: 80vh;
+  max-width: 70rem;
+  display: flex;
+  flex-direction: column;
+  font-weight: 550;
+  gap: 28px;
+  font-size: 16px;
+  margin: 0 2rem;
+}
+
+.input {
+  color: #515151 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.name {
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.first,
+.last {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  width: 100%;
+  height: 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  border: 2px solid rgba(128, 128, 128, 0.171);
+}
+
+number::placeholder {
+  margin-left: 10px;
+  color: rgb(173, 169, 169);
+}
+
+.num-check{
+  position: relative;
+}
+
+.options{
+  position: absolute;
+  top: 50%;
+  border: none;
+  background-color: transparent;
+  z-index: 100;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  border: 2px solid rgba(128, 128, 128, 0.171);
+  color: #515151 !important;
+}
+
+.checkbox {
+  margin-top: -13px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+  color: rgb(100, 100, 100);
+}
+
+.checkbox input {
+  width: 25px;
+  color: #202020;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(38, 55, 214);
+}
+
+button {
+  width: 100%;
+  height: 36px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(62, 79, 231);
+  color: white;
+}
+
+button:hover {
+  background-color: rgb(38, 55, 214);
+}
+
+
+@media screen and (max-width: 800px){
+  .heading h1{
+    font-size: 30px;
+  }
+  .heading p{
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .input-container{
+    gap: 16px;
+  }
+  .name{
+    gap: 16px !important;
+    flex-direction: column;
+  }
+  .first,
+  .last{
+    width: 100%;
+    gap: 8px;
+  }
+  input{
+    height: 30px;
+    font-size: 14px;
+  }
+  .input{
+    gap: 8px;
+  }
+  label{
+    font-size: 14px;
+  }
+  .checkbox{
+    margin: 4px 0;
+  }
+  .checkbox input {
+    width: 16px;
+    color: #202020;
+  }
+  .checkbox label {
+    font-size: 12px;
+  }
+  .input button{
+    font-size: 14px;
+    height: 30px;
+  }
+}
+
+/* .switchBox{
+  position: relative;
+  height: 1.4rem;
+  width: 2.5rem;
+  background-color: rgb(62, 79, 231);
+  border-radius: 100px;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.circle{  
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  background-color: beige;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.switchBox input{
+  position: absolute;
+  display: inline-block;
+  top: -50%;
+  left: 4px;
+  height: 3rem;
+  width: 1.9rem;
+  visibility: hidden;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.switch:checked + .circle {
+  transform: translate(1.1rem, -50%);
+} */
+
+.switchBox {
+  position: relative;
+  height: 1.4rem;
+  width: 2.5rem;
+  background-color: rgb(223, 223, 223);
+  border-radius: 100px;
+  padding: 3px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: white;
+  transition: left 0.3s ease;
+}
+
+.switchBox.active .circle {
+  left: 1.4rem;
+}
