@@ -1,0 +1,158 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 4rem rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 90rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.tabs{
+    width: 100%;
+}
+
+.items{
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin-bottom: 1rem;
+    border-bottom: 1.5px solid #adadad8a;
+}
+
+.item{
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #636363;
+    border-bottom: 3px solid transparent;
+}
+
+.paragraphs{
+    background-color: #8d8d8d0c;
+    border-radius: 8px;
+    padding: 2rem;   
+    height: 10.5rem; 
+}
+
+p{
+    color: #707070;
+    font-size: 1.8rem;
+    display: none;
+}
+
+.active{
+    border-bottom: 3px solid #82B3F6;
+    color: #82B3F6;
+}
+
+.show{
+    display: block;
+}
+
+
+@media screen and (max-width: 860px){
+    .container{
+        width: 90%;
+        max-width: 65rem;
+    }
+    .tabs{
+        width: 100%;
+    }
+    .items{
+        /* gap: 1rem; */
+        justify-content: space-between;
+    }
+    .item{
+        font-size: 1.6rem;
+        padding: 1rem 1.5rem;
+    }
+    
+    .paragraphs{
+        padding: 1.5rem;
+        height: 12rem;
+    }
+    
+    p{
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .container{
+        width: 90%;
+        max-width: 45rem;
+    }
+    .tabs{
+        width: 100%;
+    }
+    .items{
+        gap: .5rem;
+    }
+    .item{
+        font-size: 1.4rem;
+        padding: 1rem .5rem;
+        border-bottom: 1.5px solid transparent;
+    }
+    
+    .paragraphs{
+        padding: 1.5rem;
+        height: 12rem;
+    }
+    
+    p{
+        font-size: 1.4rem;
+    }
+    .active{
+        border-bottom: 2px solid #82B3F6;
+    }
+}
+
+/* very small */
+@media screen and (max-width: 350px){
+    .container{
+        position: fixed;
+    }
+    .items{
+        flex-direction: column;
+        gap: 1rem;
+        padding-bottom: 3rem;
+    }
+
+    .item{
+        margin: auto;
+        width: 50%;
+        text-align: center;
+    }
+
+    .paragraphs{
+        padding: 1.5rem;
+        overflow-y: auto;
+    }
+    
+}

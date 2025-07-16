@@ -78,7 +78,8 @@ function validateField(id, value) {
 }
 
 // Blur event on all fields
-["first", "last", "company", "email", "phone", "message"].forEach((id) => {
+const field = ["first", "last", "company", "email", "phone", "message"];
+field.forEach((id) => {
   const input = document.getElementById(id);
   if (input) {
     input.addEventListener("blur", function () {

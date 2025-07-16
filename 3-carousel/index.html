@@ -4,17 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <!-- <style>
       /* write CSS here */
     </style> -->
   </head>
   <body>
     <!-- CAROUSEL -->
-     
-
+    <div class="slider">
+      <div class="slide" class="active">
+        <img src="./img/img-0.jpg" alt="" />
+      </div>
+      <div class="slide" class="">
+        <img src="./img/img-1.jpg" alt="" class="" />
+      </div>
+      <div class="slide" class="">
+        <img src="./img/img-2.jpg" alt="" class="" />
+      </div>
+      <!-- btn -->
+      <div class="btn-container">
+        <button class="prev">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </button>
+        <button class="next">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </button>
+      </div>
+      <!-- Dots -->
+      <div class="dots-container">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
+    <!-- ion-icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   </body>
   <!-- <script>
     // write javascript here

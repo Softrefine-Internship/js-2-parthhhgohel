@@ -1,0 +1,101 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Fira Sans', sans-serif;
+    /* position: relative; */
+}
+
+.accordian {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 65rem;
+    margin: 0 auto;
+    border: 1px solid #d4d4d4be;
+    border-radius: 5px;
+    overflow: hidden;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.accordian-item{
+    border-bottom: 1px solid #d4d4d4be;
+}
+
+.accordian-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #d4d4d4be;
+    cursor: pointer;
+}
+
+h2{
+    font-size: 1.8rem;
+    color: #414141;
+}
+
+.accordian-content{
+    /* padding: 1.5rem; */
+    max-height: 0;
+    /* overflow: hidden; */
+    visibility: hidden;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+}
+p{
+    font-size: 1.6rem;
+    color: #3a3a3a;
+    
+}
+
+span{
+    color: rgb(255, 68, 68);
+}
+
+.icon-active{
+    transform: rotate(180deg);
+    color: #1b6fc9;
+}
+
+.header-active h2{
+    font-weight: 500;
+    color: #1b6fc9;
+}
+
+.content-active{
+    padding: 1.5rem;
+    visibility: visible;
+    max-height: 500px;
+    transition: all .3s ease-in-out;
+}
+
+
+/*  Media Queries */
+/* Mobile */
+@media screen and (max-width: 450px){
+    .accordian{
+        width: 90%;
+    }
+    h2{
+        font-size: 1.6rem;
+    }
+    p{
+        font-size: 1.4rem;
+    }
+}
