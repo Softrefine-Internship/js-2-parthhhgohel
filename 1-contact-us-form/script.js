@@ -1,71 +1,122 @@
-const switchBox = document.getElementById('toggleSwitch');
-const checkbox = document.getElementById('switch');
+const switchBox = document.getElementById("toggleSwitch");
+const checkbox = document.getElementById("switch");
 
-switchBox.addEventListener('click', () => {
-    checkbox.checked = !checkbox.checked;
-    switchBox.classList.toggle('active', checkbox.checked);
-    if (switchBox.classList.contains('active')) {
-        switchBox.style.backgroundColor = 'rgb(62, 79, 231)';
-    }
-    else {
-        switchBox.style.backgroundColor = 'rgb(223, 223, 223)';
-    }
+switchBox.addEventListener("click", () => {
+  checkbox.checked = !checkbox.checked;
+  switchBox.classList.toggle("active", checkbox.checked);
+  if (switchBox.classList.contains("active")) {
+    switchBox.style.backgroundColor = "rgb(62, 79, 231)";
+  } else {
+    switchBox.style.backgroundColor = "rgb(223, 223, 223)";
+  }
 });
 
-
 // Error message function with parameter of input
-function showError(className, message) {
-    document.querySelector(`.${className}`).innerHTML = message;
+function showError(id, message) {
+  const errorSpan = document.getElementById(id);
+  if (errorSpan) {
+    errorSpan.style.fontSize = "11px";
+    errorSpan.style.fontWeight = "400";
+    errorSpan.style.color = "red";
+    errorSpan.textContent = message;
+    errorSpan.classList.add("active");
+  }
 }
 
+function clearError(id) {
+  const errorSpan = document.getElementById(id);
+  if (errorSpan) {
+    errorSpan.textContent = "";
+    errorSpan.classList.remove("active");
+  }
+}
 
-// *************** form validation **********
-document.querySelector("button").addEventListener("click", function (e) {
-    e.preventDefault();
+function validateField(id, value) {
+  let errorMessage = "";
 
-    // Get input elements
-    const firstNameInput = document.getElementById("first");
-    const lastNameInput = document.getElementById("last");
-    const emailInput = document.getElementById("email");
-    const phoneInput = document.getElementById("phone");
-    const messageInput = document.getElementById("message");
+  switch (id) {
+    case "first":
+      if (!value) errorMessage = "Please enter your first name";
+      break;
+    case "last":
+      if (!value) errorMessage = "Please enter your last name";
+      break;
+    case "company":
+      if (!value) errorMessage = "Please enter your company name";
+      break;
+    case "email":
+      if (!value) errorMessage = "Please enter your email";
+      else if (!value.includes("@")) errorMessage = "Please enter a valid email";
+      break;
+    case "phone":
+      if (!value) errorMessage = "Please enter your phone number";
+      else if (!value.startsWith("+91")) errorMessage = "Phone number should start with +91";
+      else if (value.length !== 13) errorMessage = "Phone number should be 13 digits";
+      break;
+    case "message":
+      if (!value) errorMessage = "Please enter your message";
+      break;
+  }
 
-    // Get values
-    const firstNameVal = firstNameInput?.value.trim();
-    const lastNameVal = lastNameInput?.value.trim();
-    const emailVal = emailInput?.value.trim();
-    const phoneVal = phoneInput?.value.trim();
-    const messageVal = messageInput?.value.trim();
+  // Match to updated span IDs
+  const spanIdMap = {
+    first: "firstName-error",
+    last: "lastName-error",
+    company: "company-error",
+    email: "email-error",
+    phone: "phone-error",
+    message: "message-error"
+  };
 
-    // Clear previous errors
-    document.querySelectorAll("span").forEach(span => {
-        span.textContent = "";
-        span.classList.remove("active");
+  if (errorMessage) {
+    showError(spanIdMap[id], errorMessage);
+    return false;
+  } else {
+    clearError(spanIdMap[id]);
+    return true;
+  }
+}
+
+// Blur event on all fields
+["first", "last", "company", "email", "phone", "message"].forEach((id) => {
+  const input = document.getElementById(id);
+  if (input) {
+    input.addEventListener("blur", function () {
+      validateField(id, input.value.trim());
     });
+  }
+});
 
-    // Validations
-    if (firstNameVal === "" || lastNameVal === "" || emailVal === "" || messageVal === "" || phoneVal === "" ) {
-        if (firstNameVal === "") {
-            showError("firstName-error", "Please enter your first name");
-        }
-        if (lastNameVal === "") {
-            showError("lastName-error", "Please enter your last name");
-        }
-        if (emailVal === "") {
-            showError("email-error", "Please enter your email");
-        }
-        if (messageVal === "") {
-            showError("message-error", "Please enter your message");
-        }
-        if (phoneVal === "") {
-            showError("phone-error", "Please enter your phone number");
-        }
-    } else if (!emailVal.includes("@")) {
-        showError("email-error", "Please enter a valid email");
-    } else if (!phoneVal.startsWith("+91")) {
-        showError("phone-error", "Phone number should start with +91");
-    } else {
-        alert("Form submitted successfully!");
-        // Here you can proceed with form submission logic
-    }
+// Validate checkbox (privacy policy)
+function validateCheckbox() {
+  const checkbox = document.getElementById("switch");
+  if (!checkbox.checked) {
+    showError("checkbox-error", "Please agree to the privacy policy");
+    return false;
+  } else {
+    clearError("checkbox-error");
+    return true;
+  }
+}
+
+// Form submit handler
+document.querySelector("button").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  const fields = ["first", "last", "company", "email", "phone", "message"];
+  let allValid = true;
+
+  fields.forEach((fieldId) => {
+    const input = document.getElementById(fieldId);
+    const isValid = validateField(fieldId, input?.value.trim());
+    if (!isValid) allValid = false;
+  });
+
+  const checkboxValid = validateCheckbox();
+  if (!checkboxValid) allValid = false;
+
+  if (allValid) {
+    alert("Form submitted successfully!");
+    // Proceed with form logic here
+  }
 });

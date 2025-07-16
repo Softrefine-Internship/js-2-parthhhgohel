@@ -38,7 +38,7 @@ body {
   margin: 0 auto;
   /* justify-content: space-evenly; */
   flex-direction: column;
-  gap: 35px;
+  gap: 25px;
 }
 
 .heading {
@@ -50,7 +50,7 @@ body {
   justify-content: center;
   height: 20vh;
   /* min-width: 70rem; */
-  margin: 1rem 2rem;
+  margin: .5rem 2rem;
 }
 
 .heading h1 {
@@ -71,7 +71,7 @@ body {
   display: flex;
   flex-direction: column;
   font-weight: 550;
-  gap: 28px;
+  gap: 20px;
   font-size: 16px;
   margin: 0 2rem;
 }
@@ -80,7 +80,7 @@ body {
   color: #515151 !important;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
 .name {
@@ -139,6 +139,7 @@ textarea {
   display: flex;
   align-items: center;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 15px;
   color: rgb(100, 100, 100);
 }
@@ -202,17 +203,12 @@ button:hover {
 }
 
 /* Error  */
-.input input:invalid,
-.input textarea:invalid {
-  border-color: red;
+#error{
+  color: red;
+  font-size: 0.4rem !important;
+  display: block;
 }
 
-span.error {
-  color: red;
-  font-size: 0.85rem;
-  display: none;
-  margin-top: 4px;
-}
 
 /* Show error when active */
 /* span.active {
@@ -270,7 +266,7 @@ span.error {
   }
   .switchBox{
     height: 1.2rem;
-    width: 3rem;
+    /* width: 3rem; */
     /* margin-right: 2rem; */
   }
   .circle{
@@ -278,7 +274,7 @@ span.error {
     height: 0.9rem;
   }
   .switchBox.active .circle {
-    left: .8rem;
+    /* left: .8rem; */
   }
 }
 
