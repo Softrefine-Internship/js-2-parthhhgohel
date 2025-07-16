@@ -22,20 +22,24 @@
         <div class="input name">
           <div class="first">
             <label for="first name">First name</label>
-            <input type="text">
+            <input type="text" name="first" id="first">
+            <span class="firstName-error"></span>
           </div>
           <div class="last">
             <label for="last name">Last name</label>
-            <input type="text">
+            <input type="text" name="last" id="last">
+            <span class="lastName-error error"></span>
           </div>
         </div>
         <div class="input">
           <label for="company">Company</label>
-          <input type="text">
+          <input type="text" name="company" id="company">
+          <span class="company-error error"></span>
         </div>
         <div class="input">
           <label for="email">Email</label>
-          <input type="text">
+          <input type="text" name="email" id="email">
+          <span class="email-error error"></span>
         </div>
         <div class="input">
           <label for="phone">Phone number</label>
@@ -44,18 +48,21 @@
             <option value="INDIA" class="option">IN</option>
             <option value="UNITED-KINGDOM" class="option">UK</option>
           </select>
-          <input type="number" class="number num-check" placeholder="">
+          <input type="number" class="number num-check" placeholder="" name="phone" id="phone">
+          <span class="phone-error error"></span>
         </div>
         <div class="input">
           <label for="message">Message</label>
-          <textarea name="message" id="" cols="50"></textarea>
+          <textarea name="message" id="message" cols="50"></textarea>
+          <span class="message-error error"></span>
         </div>
         <div class="checkbox">
-            <label class="switchBox" id="toggleSwitch">
-              <input type="checkbox" name="switch" id="switch" hidden>
-              <span class="circle">&nbsp;</span>
-            </label>
+          <label class="switchBox" id="toggleSwitch">
+            <input type="checkbox" name="switch" id="switch" hidden>
+            <span class="circle">&nbsp;</span>
+          </label>
           <p>By selecting this, you agree to our <a href="#">privacy policy</a></p>
+          <span class="checkbox-error error"></span>
         </div>
         <div class="input">
           <button>Let's talk</button>
