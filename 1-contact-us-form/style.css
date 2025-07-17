@@ -112,16 +112,40 @@ number::placeholder {
   color: rgb(173, 169, 169);
 }
 
-.num-check{
+.phone-wrapper {
   position: relative;
+  display: flex;
+  width: 100%;
 }
 
-.options{
+.select-sec {
   position: absolute;
-  top: 50%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 0 1rem;
+  font-size: 14px;
   border: none;
-  background-color: transparent;
-  z-index: 100;
+  background: transparent;
+  color: #333;
+  z-index: 2;
+  appearance: none;
+  cursor: pointer;
+}
+
+ion-icon {
+  color: #333;
+  z-index: 9999;
+}
+
+.phone-input {
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  padding: 0 1rem 0 3rem;
+  border-radius: 5px;
+  border: 2px solid rgba(128, 128, 128, 0.171);
+  color: #333;
 }
 
 textarea {
@@ -277,43 +301,3 @@ button:hover {
     /* left: .8rem; */
   }
 }
-
-/* .switchBox{
-  position: relative;
-  height: 1.4rem;
-  width: 2.5rem;
-  background-color: rgb(62, 79, 231);
-  border-radius: 100px;
-  padding: 3px;
-  cursor: pointer;
-}
-
-.circle{  
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  display: block;
-  border-radius: 50%;
-  width: 1rem;
-  height: 1rem;
-  background-color: beige;
-  cursor: pointer;
-  position: relative;
-  transition: transform 0.3s ease;
-}
-
-.switchBox input{
-  position: absolute;
-  display: inline-block;
-  top: -50%;
-  left: 4px;
-  height: 3rem;
-  width: 1.9rem;
-  visibility: hidden;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.switch:checked + .circle {
-  transform: translate(1.1rem, -50%);
-} */

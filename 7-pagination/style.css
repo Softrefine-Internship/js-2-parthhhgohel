@@ -8,7 +8,7 @@
 }
 
 html {
-    font-size: 62.5%; /* 1rem = 10px */
+    font-size: 62.5%;
 }
 
 .container {
@@ -28,6 +28,16 @@ html {
     border: 1.5px solid #9b9b9bbe;
     border-radius: 7px;
     overflow: hidden;
+
+    width: 90%;
+    max-width: 38rem;
+    margin: 0 auto; 
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* flex-wrap: wrap; */
 }
 
 .prev, .next {
@@ -38,6 +48,11 @@ html {
     font-size: 1.6rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
 }
 
 .prev:hover, .next:hover {
@@ -69,4 +84,34 @@ ion-icon{
 .active{
     background-color: rgba(225, 239, 255, 0.644);
     color: rgb(37, 139, 255);
+}
+
+@media (max-width: 450px) {
+    .pagination{
+        max-width: 28.5rem;
+    }
+
+    .page {
+        margin: 0;
+        border: none;
+        border-right: 1px solid #afafafbe;
+        padding: 1rem 1.5rem;
+    }
+
+    .prev{
+        border-right: 1px solid #afafafbe;
+    }
+
+    p {
+        display: none;
+    }
+
+    .prev, .next {
+        padding: 1rem;
+    }
+
+    ion-icon{
+        font-size: 2rem;
+        display: block;
+    }
 }

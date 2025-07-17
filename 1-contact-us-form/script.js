@@ -50,8 +50,8 @@ function validateField(id, value) {
       break;
     case "phone":
       if (!value) errorMessage = "Please enter your phone number";
-      else if (!value.startsWith("+91")) errorMessage = "Phone number should start with +91";
-      else if (value.length !== 13) errorMessage = "Phone number should be 13 digits";
+      else if (!/^[6-9]\d{9}$/.test(value)) errorMessage = "Phone number should start with +91";
+      else if (value.length !== 10) errorMessage = "Phone number should be 13 digits";
       break;
     case "message":
       if (!value) errorMessage = "Please enter your message";
