@@ -45,7 +45,12 @@ body {
     cursor: pointer;
 }
 
+.accordian-header:last-child{
+    border-bottom: none;
+}
+
 h2{
+    font-weight: 500;
     font-size: 1.8rem;
     color: #414141;
 }
