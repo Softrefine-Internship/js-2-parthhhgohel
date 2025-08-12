@@ -63,6 +63,10 @@ body {
     color: #cf711f;
 }
 
+.active-link{
+    color: #cf711f !important;
+}
+
 .main-nav-link.nav-cta:link,
 .main-nav-link.nav-cta:visited {
     padding: 1.2rem 2.4rem;
@@ -93,6 +97,10 @@ body {
 
 .icon-mobile-nav[name="close-outline"] {
     display: none;
+}
+
+.icon-mobile-nav[name="close-outline"]:focus {
+    border: 3px solid #e67e22;
 }
 
 /* STICKY NAVIGATION */

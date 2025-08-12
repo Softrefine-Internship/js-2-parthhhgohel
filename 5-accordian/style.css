@@ -45,7 +45,7 @@ body {
     cursor: pointer;
 }
 
-.accordian-header:last-child{
+.accordian-item:last-child{
     border-bottom: none;
 }
 
@@ -56,16 +56,15 @@ h2{
 }
 
 .accordian-content{
-    /* padding: 1.5rem; */
     max-height: 0;
-    /* overflow: hidden; */
-    visibility: hidden;
+    padding: 0 1.5rem;
     overflow: hidden;
-    transition: all .3s ease-in-out;
+    transition: all 0.5s ease;
 }
 p{
     font-size: 1.6rem;
     color: #3a3a3a;
+    text-wrap: balance;
     
 }
 
@@ -84,10 +83,10 @@ span{
 }
 
 .content-active{
+    /* opacity: 1; */
     padding: 1.5rem;
-    visibility: visible;
+    display: block;
     max-height: 500px;
-    transition: all .3s ease-in-out;
 }
 
 

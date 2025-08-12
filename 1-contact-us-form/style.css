@@ -22,13 +22,21 @@
 }
 
 body {
-  background: radial-gradient(
-    farthest-corner at 50px 200px,
-    rgba(184, 89, 184, 0.23) 0%,
-    rgb(255, 255, 255) 15%
-  );
+  background: 
+    radial-gradient(
+      farthest-corner at 50px 200px,
+      rgba(184, 89, 184, 0.23) 0%,
+      rgb(255, 255, 255) 15%
+    ),
+    /* Right side */
+    radial-gradient(
+      farthest-corner at 50px 200px,
+      rgba(184, 89, 184, 0.23) 0%,
+      rgb(255, 255, 255) 15%
+    );
   background-repeat: no-repeat;
 }
+
 
 .container {
   height: 100vh;
@@ -105,12 +113,13 @@ input {
   border: none;
   border-radius: 5px;
   border: 2px solid rgba(128, 128, 128, 0.171);
+  padding: 0 0.5rem;
 }
 
-number::placeholder {
-  margin-left: 10px;
+/* number {
+  margin-left: 4rem;
   color: rgb(173, 169, 169);
-}
+} */
 
 .phone-wrapper {
   position: relative;
@@ -123,13 +132,14 @@ number::placeholder {
   top: 0;
   left: 0;
   height: 100%;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   font-size: 14px;
   border: none;
   background: transparent;
   color: #333;
   z-index: 2;
-  appearance: none;
+  /* appearance: none; */
+  color: #bbbbbb !important;
   cursor: pointer;
 }
 
@@ -138,11 +148,15 @@ ion-icon {
   z-index: 9999;
 }
 
+option {
+  color: #333;
+}
+
 .phone-input {
   width: 100%;
   height: 40px;
   font-size: 16px;
-  padding: 0 1rem 0 3rem;
+  padding: 0 1rem 0 4rem;
   border-radius: 5px;
   border: 2px solid rgba(128, 128, 128, 0.171);
   color: #333;
@@ -252,6 +266,22 @@ button:hover {
 }
 
 @media screen and (max-width: 400px){
+  .container {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .heading {
+    gap: 10px;
+    height: 13vh;
+  }
+
+  .heading h1{
+    font-size: 24px;
+  }
+  .heading p{
+    font-size: 14px;
+  }
   .input-container{
     gap: 16px;
   }
@@ -290,14 +320,13 @@ button:hover {
   }
   .switchBox{
     height: 1.2rem;
-    /* width: 3rem; */
-    /* margin-right: 2rem; */
   }
   .circle{
     width: 0.9rem;
     height: 0.9rem;
   }
-  .switchBox.active .circle {
-    /* left: .8rem; */
+
+  .btn{
+    margin-bottom: 5rem;
   }
 }

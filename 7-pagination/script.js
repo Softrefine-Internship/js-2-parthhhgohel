@@ -11,15 +11,37 @@ function updateMove(){
     });
 
     pages[currPage].classList.add('active');
+
+    if (currPage === 0) {
+        prev.disabled = true;
+        prev.style.opacity = '0.3';
+    } else {
+        prev.disabled = false;
+        prev.style.opacity = '1';
+    }
+
+    if (currPage === pages.length - 1) {
+        next.disabled = true;
+        next.style.opacity = '0.3';
+    } else {
+        next.disabled = false;
+        next.style.opacity = '1';
+    }
 }
 
+updateMove();
+
 function prevMove(){
-    currPage = (currPage - 1 + pages.length) % pages.length;
-    updateMove();
+    if(currPage > 0){
+        currPage--;
+        updateMove();
+    }    
 }
 function nextMove(){
-    currPage = (currPage + 1) % pages.length;
-    updateMove();
+    if(currPage < pages.length - 1){
+        currPage++;
+        updateMove();
+    }
 }
 
 prev.addEventListener('click', prevMove);

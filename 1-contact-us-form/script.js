@@ -46,12 +46,27 @@ function validateField(id, value) {
       break;
     case "email":
       if (!value) errorMessage = "Please enter your email";
-      else if (!value.includes("@")) errorMessage = "Please enter a valid email";
+      else if (!value.includes("@gmail.com"))
+        errorMessage = "Please enter a valid email";
       break;
     case "phone":
-      if (!value) errorMessage = "Please enter your phone number";
-      else if (!/^[6-9]\d{9}$/.test(value)) errorMessage = "Phone number should start with +91";
-      else if (value.length !== 10) errorMessage = "Phone number should be 13 digits";
+    case "phone":
+      const country = document.querySelector(".select-sec").value;
+      if (!value) {
+        errorMessage = "Please enter your phone number";
+      } else {
+        if (country === "US") {
+          const us = /^\d{10}$/;
+          if (!us.test(value)) {
+            errorMessage = "Enter a valid 10-digit US phone number";
+          }
+        } else if (country === "IN") {
+          const ind = /^[6-9]\d{9}$/;
+          if (!ind.test(value)) {
+            errorMessage = "Enter a valid 10-digit number";
+          }
+        }
+      }
       break;
     case "message":
       if (!value) errorMessage = "Please enter your message";
@@ -65,7 +80,7 @@ function validateField(id, value) {
     company: "company-error",
     email: "email-error",
     phone: "phone-error",
-    message: "message-error"
+    message: "message-error",
   };
 
   if (errorMessage) {
@@ -118,6 +133,6 @@ document.querySelector("button").addEventListener("click", function (e) {
 
   if (allValid) {
     alert("Form submitted successfully!");
-    // Proceed with form logic here
+    location.reload();
   }
 });

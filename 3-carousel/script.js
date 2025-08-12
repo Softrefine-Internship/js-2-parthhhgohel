@@ -23,15 +23,12 @@ function updateSlide(){
 
 function prevSlide(){
     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    // adding white border of previous btn
-    prevBtn.style.outerBorder = "2px solid white";
 
     updateSlide();
 }
 
 function nextSlide() {
     currentSlide = (currentSlide + 1) % slides.length;
-    nextBtn.style.outerBorder = "2px solid white";
     updateSlide();
 }
 
