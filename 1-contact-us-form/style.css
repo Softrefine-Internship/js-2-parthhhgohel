@@ -21,20 +21,28 @@
   font-family: "Fira Sans", sans-serif;
 }
 
-body {
-  background: 
-    radial-gradient(
-      farthest-corner at 50px 200px,
-      rgba(184, 89, 184, 0.23) 0%,
-      rgb(255, 255, 255) 15%
-    ),
-    /* Right side */
-    radial-gradient(
-      farthest-corner at 50px 200px,
-      rgba(184, 89, 184, 0.23) 0%,
-      rgb(255, 255, 255) 15%
-    );
-  background-repeat: no-repeat;
+.pink-gradient {
+  position: absolute;
+  top: 110px;
+  left: 70px;
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: rgba(204, 114, 200, 0.575);
+  filter: blur(80px);
+  border: 2px solid black;
+}
+
+.purple-gradient {
+  position: absolute;
+  top: 40px;
+  left: 500px;
+  width: 250px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgba(133, 99, 177, 0.411);
+  filter: blur(80px);
 }
 
 
@@ -114,6 +122,9 @@ input {
   border-radius: 5px;
   border: 2px solid rgba(128, 128, 128, 0.171);
   padding: 0 0.5rem;
+  background-color: transparent;
+  color: #515151 !important;
+  outline: none
 }
 
 /* number {
@@ -262,6 +273,20 @@ button:hover {
   }
   .heading p{
     font-size: 18px;
+  }
+
+  .pink-gradient{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 30%;
+  }
+
+  .purple-gradient{
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 30%;
   }
 }
 
